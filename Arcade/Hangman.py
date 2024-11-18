@@ -137,7 +137,7 @@ def Hangman():
         print(f"\nCongratulations! You have correctly guessed the word, '{word}'")
         print("You have saved him!")
         print(
-                """
+                    """
                     \ o /
                       |
                      / \  
