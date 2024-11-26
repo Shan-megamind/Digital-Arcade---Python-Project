@@ -41,15 +41,16 @@ def winner_decider(player, computer):
 
 # The actual game : Where Magic Happens
 def rock_paper_scissors():
-    print("\nWelcome to the Classic: Rock, Paper, Scissors!")
-    print("It is You vs Me")
-    print("First to get to 5 points, WINS!")
-    print("Prepare to lose!")
+    while True:
+     print("\nWelcome to the Classic: Rock, Paper, Scissors!")
+     print("It is You vs Me")
+     print("First to get to 5 points, WINS!")
+     print("Prepare to lose!")
 
-    player_score = 0
-    computer_score = 0
+     player_score = 0
+     computer_score = 0
 
-    while player_score < 5 and computer_score < 5:
+     while player_score < 5 and computer_score < 5:
         print("\nChoose your option: rock, paper, or scissors")
         player_choice = input("You choose: ").lower()
 
@@ -83,12 +84,17 @@ def rock_paper_scissors():
         # Score display
         print(f"\nCurrent Scores: You: {player_score} | Me: {computer_score} ")
     
-    # Getting the final winner
-    if player_score == 5:
+     # Getting the final winner
+     if player_score == 5:
         print("\nCongratulations! I am defeated. You've reached 5 points first and WON THE GAME!")
-    else:
+     else:
         print("\nHAHA! You have been defeated! I've reached 5 points first, and WON THE GAME!")
         print("Better Luck Next time!")
+     
+     replay = input("\nWould you like to play again? (yes/no): ").lower()
+     if replay != "yes":
+         print("Thanks for playing! Later Skater!")
+         break
 
 # Start the game 
 rock_paper_scissors()
