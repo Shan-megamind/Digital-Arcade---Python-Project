@@ -81,7 +81,7 @@ def display_current_progress(word, guessed_letters):
     return " ".join([letter if letter in guessed_letters else "_" for letter in word])
 
 # Main Hangman Code - Where Magic Happens
-def Hangman():
+def hangman():
     while True:
         word = generate_random_word()  # Calling the function to get a random meaningful word
         guessed_letters = set()
@@ -157,4 +157,5 @@ def Hangman():
             break
 
 # Start the Game!!!
-Hangman()
+def start_game():
+    hangman()

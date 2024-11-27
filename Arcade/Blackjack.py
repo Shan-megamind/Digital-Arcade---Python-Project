@@ -80,7 +80,7 @@ Welcome to Blackjack!
 """)
 
 # Main game loop
-def start_game():
+def blackjack():
     display_rules()
     deck = create_deck()
     player_hand = [deck.pop(), deck.pop()]
@@ -130,5 +130,7 @@ def start_game():
         print("\nIt's a tie!")
 
 # Run the game
-if __name__ == "__main__":
-    start_game()
+def start_game():
+    if __name__ == "__main__":
+        blackjack()
+

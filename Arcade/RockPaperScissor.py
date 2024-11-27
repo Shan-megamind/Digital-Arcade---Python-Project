@@ -97,4 +97,5 @@ def rock_paper_scissors():
          break
 
 # Start the game 
-rock_paper_scissors()
+def start_game():
+    rock_paper_scissors()
