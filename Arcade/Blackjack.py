@@ -30,7 +30,7 @@ def calculate_hand(hand):
     return value
 
 # Display hand with ASCII art
-def display_hand_with_art(hand, hide_first_card=False):
+def display_hand_with_art(hand, hide_first_card = False):
     def card_art(card):
         suit_symbols = {"Hearts": "♥", "Diamonds": "♦", "Clubs": "♣", "Spades": "♠"}
         value, suit = card.split(" ")[0], card.split(" ")[2]
@@ -80,14 +80,14 @@ Welcome to Blackjack!
 """)
 
 # Main game loop
-def play_blackjack():
+def start_game():
     display_rules()
     deck = create_deck()
     player_hand = [deck.pop(), deck.pop()]
     dealer_hand = [deck.pop(), deck.pop()]
 
     print("\nDealer's Hand:")
-    display_hand_with_art(dealer_hand, hide_first_card=True)
+    display_hand_with_art(dealer_hand, hide_first_card = True)
     print("\nYour Hand:")
     display_hand_with_art(player_hand)
 
@@ -131,4 +131,4 @@ def play_blackjack():
 
 # Run the game
 if __name__ == "__main__":
-    play_blackjack()
+    start_game()
