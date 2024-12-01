@@ -82,7 +82,7 @@ def display_current_progress(word, guessed_letters):
 
 # Main Hangman Code - Where Magic Happens
 def hangman():
-    while True:
+    #while True:
         word = generate_random_word()  # Calling the function to get a random meaningful word
         guessed_letters = set()
         remaining_attempts = len(hangman_stages) - 1  # Number of stages left before 'Game Over'
@@ -151,10 +151,10 @@ def hangman():
             print("Alas! You couldn't save him. He's dead because of you")
             print(f"The word was '{word}'")
 
-        replay = input("\nWould you like to play with the man's life again? (yes/no)").lower()
-        if replay != "yes":
-            print("Thanks for playing! Later Skater!")
-            break
+        #replay = input("\nWould you like to play with the man's life again? (yes/no)").lower()
+        #if replay != "yes":
+        #    print("Thanks for playing! Later Skater!")
+         #   break
 
 # Start the Game!!!
 def start_game():

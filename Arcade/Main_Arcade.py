@@ -19,6 +19,22 @@ class DigitalArcade:
             print(f"{key}. {name}")
         print("Q. Quit")
 
+    def play_game(self, game_function):
+        while True:
+            game_function() # Launch the game
+            replay_choice = input ("\nWould you like to replay this game (R), return to the main menu (M), or quit the arcade (Q)? ").strip().upper()
+            if replay_choice == "R":
+                print("\nRestarting the game...\n")
+                continue
+            elif replay_choice == "M":
+                print("\nReturning to the Main Menu...\n")
+                break
+            elif replay_choice == "Q":
+                print("\nBOOOOOORIIIIINNNGGGG! Thanks for visiting Megamind's Digital Arcade! Goodbye!")
+                exit()
+            else:
+                print("Invalid choice! Select R, M, or Q.")
+
     def play(self):
         while True:
             self.display_menu()
@@ -29,7 +45,7 @@ class DigitalArcade:
             elif choice in self.games:
                 game_name, game_function = self.games[choice]
                 print(f"\nLaunching {game_name}...\n")
-                game_function()
+                self.play_game(game_function) # Handle the replay logic
             else:
                 print("Invalid choice! Please try again.")
 

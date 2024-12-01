@@ -131,6 +131,5 @@ def blackjack():
 
 # Run the game
 def start_game():
-    if __name__ == "__main__":
-        blackjack()
+    blackjack()
 

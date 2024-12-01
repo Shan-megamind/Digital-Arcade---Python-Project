@@ -2,7 +2,7 @@ import random
 
 # Rock Paper Scissor options picked through the dictionary
 weapon_art = {
-    "rock": """
+    "r": """
         _______
     ---'   ____)
           (_____)
@@ -10,7 +10,7 @@ weapon_art = {
           (____)
     ---.__(___)
     """,
-    "paper": """
+    "p": """
          _______
     ---'    ____)____
                ______)
@@ -18,7 +18,7 @@ weapon_art = {
              _______)
     ---.__________)
     """,
-    "scissors": """
+    "s": """
         _______
     ---'   ____)____
               ______)
@@ -32,16 +32,16 @@ weapon_art = {
 def winner_decider(player, computer):
     if player == computer:
         return "tie"
-    elif (player == "rock" and computer == "scissors") or \
-         (player == "scissors" and computer == "paper") or \
-         (player == "paper" and computer == "rock"):
+    elif (player == "r" and computer == "s") or \
+         (player == "s" and computer == "p") or \
+         (player == "p" and computer == "r"):
         return "player"
     else:
         return "computer"
 
 # The actual game : Where Magic Happens
 def rock_paper_scissors():
-    while True:
+    #while True:
      print("\nWelcome to the Classic: Rock, Paper, Scissors!")
      print("It is You vs Me")
      print("First to get to 5 points, WINS!")
@@ -51,17 +51,17 @@ def rock_paper_scissors():
      computer_score = 0
 
      while player_score < 5 and computer_score < 5:
-        print("\nChoose your option: rock, paper, or scissors")
+        print("\nChoose your option: rock (r), paper (p), or scissors (s)")
         player_choice = input("You choose: ").lower()
 
         # Check for valid input 
-        if player_choice not in ["rock", "paper", "scissors"]:
+        if player_choice not in ["r", "p", "s"]:
             print("Invalid choice! I see you are nervous!")
-            print("Please choose one of these: rock, paper, or scissors")
+            print("Please choose one of these: r, p, or s")
             continue
 
         # Generate random computer choice
-        computer_choice = random.choice(["rock", "paper", "scissors"])
+        computer_choice = random.choice(["r", "p", "s"])
 
         # Display choices from the above set dictionary art
         print("\nYou Chose:")
@@ -91,10 +91,10 @@ def rock_paper_scissors():
         print("\nHAHA! You have been defeated! I've reached 5 points first, and WON THE GAME!")
         print("Better Luck Next time!")
      
-     replay = input("\nWould you like to play again? (yes/no): ").lower()
-     if replay != "yes":
-         print("Thanks for playing! Later Skater!")
-         break
+     #replay = input("\nWould you like to play again? (yes/no): ").lower()
+     #if replay != "yes":
+      #   print("Thanks for playing! Later Skater!")
+       #  break
 
 # Start the game 
 def start_game():
