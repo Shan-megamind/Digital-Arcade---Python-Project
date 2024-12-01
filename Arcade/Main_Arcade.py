@@ -12,12 +12,25 @@ class DigitalArcade:
         }
 
     def display_menu(self):
-        print("\nWelcome to Megamind's Digital Arcade!")
-        print("I am Megamind and I have three games for you to play!")
+        print("""
+       ╔════════════════════════════════════╗
+       ║    Welcome to Megamind's Arcade!   ║
+       ║ Buckle up for some Exciting Games  ║
+       ╚════════════════════════════════════╝
+    """)
         print("\nChoose a game to play:")
         for key, (name, _) in self.games.items():
-            print(f"{key}. {name}")
+            description = self.game_description(name)
+            print(f"{key}. {name} - {description}") # Games and thier respective descriptions
         print("Q. Quit")
+
+    def game_description(self, name):
+        descriptions = {
+            "Rock-Paper-Scissors": "Classic game of strategy. First to 5 points wins!",
+            "Hangman": "Guess the word before the stickman meets his end.",
+            "Blackjack": "Beat the dealer without exceeding 21!",
+        }
+        return descriptions.get(name, "A fun game!")
 
     def play_game(self, game_function):
         while True:
@@ -38,7 +51,7 @@ class DigitalArcade:
     def play(self):
         while True:
             self.display_menu()
-            choice = input("\nEnter your choice: ").strip().upper()
+            choice = input("\nEnter your choice (1/2/3/Q): ").strip().upper()
             if choice == "Q":
                 print("\nBOOOOOORIIIIINNNGGGG! Thanks for visiting Megamind's Digital Arcade! Goodbye!")
                 break
