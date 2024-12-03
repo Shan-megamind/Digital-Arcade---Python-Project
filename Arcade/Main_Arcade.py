@@ -3,6 +3,11 @@ from RockPaperScissor import start_game as rps_game
 from Hangman import start_game as hangman_game
 from Blackjack import start_game as blackjack_game
 
+import os
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 class DigitalArcade:
     def __init__(self):
         # initializing the aracde with a dictionary of games | Each entry maps a number corresponding to the game and its start function
@@ -40,6 +45,7 @@ class DigitalArcade:
     # Function to play the selected game
     def play_game(self, game_function):
         while True:
+            clear_screen() # Clear Screen before starting the game
             game_function() # Launch the game using its start function
             # Ask the player if they want to replay, return to the menu, or quit
             replay_choice = input ("\nWould you like to replay this game (R), return to the main menu (M), or quit the arcade (Q)? ").strip().upper()
