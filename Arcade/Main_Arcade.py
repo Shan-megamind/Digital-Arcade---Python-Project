@@ -74,7 +74,7 @@ class DigitalArcade:
                 print(f"\nLaunching {game_name}...\n")
                 self.play_game(game_function) 
             else:
-                print("Invalid choice! Please try again.")
+                print("Invalid choice! Please choose between - 1/2/3/Q")
 
 if __name__ == "__main__":
     arcade = DigitalArcade()
