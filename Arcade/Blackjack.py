@@ -40,11 +40,11 @@ def display_hand_with_art(hand, hide_first_card = False):
         symbol = suit_symbols[suit]
         return [
             "┌─────────┐",
-            f"│{value:<2}       │",  # Top-left value
+            f"│{value:<2}       │",  # Top-left value occupying the space of 2 characters 
             "│         │",
             f"│    {symbol}    │",  # Suit symbol in the middle
             "│         │",
-            f"│       {value:>2}│",  # Bottom-right value
+            f"│       {value:>2}│",  # Bottom-right value occupying the space of 2 characters
             "└─────────┘"
         ]
 

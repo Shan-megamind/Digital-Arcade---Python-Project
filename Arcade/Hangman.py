@@ -93,8 +93,8 @@ def hangman():
     print("The life of this man..")
     print(
         """ 
-          o
-         /|\\
+          o/
+         /|
          / \\
         """
     )
